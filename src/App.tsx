@@ -1,9 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useTypedSelector } from './hooks/useTypedSelector';
 import './App.css';
 
 function App() {
-   const users = useSelector(state => state);
+   const {loading, users, error} = useTypedSelector(state => state.user);
    console.log(users);
    return (
       <div className="App">
